@@ -27,5 +27,4 @@ berada di folder template. Di dalam file html tersebut, terdapat pemetaan data d
 sesuai dengan apa yang dipanggil dan bisa ditampilkan. Pemetaan data tersebut dibuat di file views.py dan digunakan pada template.
 
 Poin 4:
-Saya membuat suatu aplikasi di heroku bernama stenlytugas2 di mana aplikasi ini akan menampilkan aplikasi yang telah saya buat
-pada tugas 2 ini.
+Saya membuat suatu aplikasi di heroku bernama stenlytugas2. Lalu, saya membuat dua repository secret, satu untuk heroku API key aplikasi dan satu untuk nama aplikasi. Setelah itu, aplikasi bisa dilihat dengan mengakses ke link aplikasi tersebut.
