@@ -1,5 +1,5 @@
 Link ke Heroku = https://stenlytugas2.herokuapp.com/katalog/
-![bagan]()
+![bagan](https://github.com/stenly10/stenly_tugas2/blob/main/katalog/bagan.jpg "bagan")
 
 
 Jelaskan kenapa menggunakan virtual environment?
