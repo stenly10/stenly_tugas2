@@ -7,7 +7,7 @@ Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan v
 Jawaban:
 Kita menggunakan virtual environment agar aplikasi yang kita buat dapat di-edit dan dijalankan sesuai dengan versinya
 sehingga tidak bentrok dengan versi lain yang kita punyai, contohnya di aplikasi lain.
-kita tetap bisa membuat aplikasi web berbasis django tanpa menggunakan virtual environment.
+Kita tetap bisa membuat aplikasi web berbasis django tanpa menggunakan virtual environment.
 
 
 Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
