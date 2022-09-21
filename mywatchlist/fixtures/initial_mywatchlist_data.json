@@ -1,0 +1,113 @@
+[
+    { 
+        "model": "mywatchlist.MyWatchList",
+        "pk": 1,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Top Gun: Maverick",
+            "rating":5,
+            "release_date":"28 April 2022",
+            "review":"Perangnya dan pesawatnya keren"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 2,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Weathering With You",
+            "rating":5,
+            "release_date":"19 Juli 2019",
+            "review":"Animasinya bagus dan filmnya ringan"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 3,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Avengers End Game",
+            "rating":5,
+            "release_date":"24 April 2019",
+            "review":"CGI nya keren dan merupakan film dari seri Avengers terakhir"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 4,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Sword Art Online the Movie -Ordinal Scale-",
+            "rating":5,
+            "release_date":"18 Februari 2017",
+            "review":"Animasinya bagus dan kirito sangat OP"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 5,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Spider-Man No Way Home",
+            "rating":5,
+            "release_date":"15 Desember 2021",
+            "review":"Filmnya keren, Spider Man nya ada 3"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 6,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Boruto: Naruto the Movie",
+            "rating":5,
+            "release_date":"27 September 2015",
+            "review":"Animasinya bagus, rasengan boruto keren"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 7,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Jurrasic World",
+            "rating":5,
+            "release_date":"12 Juni 2015",
+            "review":"Filmnya keren, pemeran utamanya bisa komunikasi dengan raptor"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 8,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Jumanji: Welcome To The Jungle",
+            "rating":5,
+            "release_date":"20 Desember 2017",
+            "review":"Filmnya lucu dan pemerannya berbeda dengan film sebelumnya"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 9,
+        "fields": {
+            "watched": "Sudah",
+            "title":"Rush Hour",
+            "rating":5,
+            "release_date":"3 Agustus 2001",
+            "review":"Filmnya sangat lucu dan ringan"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 10,
+        "fields": {
+            "watched": "Sudah",
+            "title":"The Martian",
+            "rating":5,
+            "release_date":"30 September 2015",
+            "review":"Filmnya keren tentang bertahan hidup di Mars"
+        }
+    }
+
+]
