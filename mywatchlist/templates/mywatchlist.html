@@ -17,13 +17,13 @@
       <th>Review</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
-    {% for data in watch_list %}
+    {% for watch_list in data_watch_list %}
     <tr>
-        <th>{{data.watched}}</th>
-        <th>{{data.title}}</th>
-        <th>{{data.rating}}</th>
-        <th>{{data.release_date}}</th>
-        <th>{{data.review}}</th>
+        <th>{{watch_list.watched}}</th>
+        <th>{{watch_list.title}}</th>
+        <th>{{watch_list.rating}}</th>
+        <th>{{watch_list.release_date}}</th>
+        <th>{{watch_list.review}}</th>
     </tr>
 {% endfor %}
   </table>

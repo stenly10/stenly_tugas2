@@ -5,11 +5,11 @@ from django.core import serializers
 
 # Create your views here.
 def show_html(request):
-    watch_list = MyWatchList.objects.all()
+    data_watch_list = MyWatchList.objects.all()
     context = {
         'nama': 'Stenly Yosua Saputra',
         'id': '2106704244',
-        'watch_list': watch_list
+        'data_watch_list': data_watch_list
     }
     return render(request, "mywatchlist.html", context)
 
