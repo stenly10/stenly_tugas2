@@ -1,6 +1,8 @@
 # Tugas 3
 # Screenshot hasil postman
-
+![postman_html](https://github.com/stenly10/stenly_tugas2/blob/main/mywatchlist/postman_html.png "postman_html")
+![postman_json](https://github.com/stenly10/stenly_tugas2/blob/main/mywatchlist/postman_json.png "postman_json")
+![postman_xml](https://github.com/stenly10/stenly_tugas2/blob/main/mywatchlist/postman_xml.png "postman_xml")
 
 ## Jelaskan perbedaan antara JSON, XML, dan HTML!
 Jawaban:<br/>
