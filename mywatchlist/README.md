@@ -10,7 +10,7 @@ Extensible markup language (XML) adalah suatu format yang menggunakan bahasa mar
 Hyper text markup language (HTML) adalah suatu format yang menggunakan bahasa markup. Berbeda dengan XML dan JSON, HTML merupakan
 format yang digunakan untuk menampilkan data di website.
 
-## Jelaskan mengapa kita memerlukan data delivery dala pengimplementasian sebuah platform?
+## Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 Jawaban:<br/>
 Kita memerlukannya untuk bisa mengirimkan data yang diperlukan untuk suatu bagian pada sebuah platform dan juga bisa memodifikasi dan mengembalikannya lagi.
 
