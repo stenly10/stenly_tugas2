@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h5>Username: </h5>
+<b>{{ username }}</b>
+
+<table>
+  <tr>
+  <th>Judul Task</th>
+  <th>Deskripsi Task</th>
+  <th>Tanggal Pembuatan Task</th>
+  </tr>
+  {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+  {% for task in list_task %}
+    {% if task.user == user %}
+    <tr>
+        <th>{{task.title}}</th>
+        <th>{{task.description}}</th>
+        <th>{{task.date}}</th>
+        {% if task.is_finished %}
+          <th>Selesai</th>
+        {% else %}
+          <th>Belum selesai</th>
+        {% endif %}
+        <form action= "change-status/" method="POST">
+          {% csrf_token %}  
+          <th><input type="submit" name="{{task.id}}" value="Change Status"></th>
+        </form>
+        <form action= "delete-task/" method="POST" >
+          {% csrf_token %}
+          <th><input type="submit" name="{{task.id}}" value="Delete Task"></th>
+        </form>
+    </tr>
+    {% endif %}
+{% endfor %}
+</table>
+
+    
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+<button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+ {% endblock content %}
