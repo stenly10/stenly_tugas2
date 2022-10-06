@@ -1,0 +1,14 @@
+body{
+    background-image: url("aesthetic-wallpaper-1.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.text{
+    color: white;
+}
+
+.todolist{
+    color: white;
+}

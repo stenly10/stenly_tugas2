@@ -1,44 +1,53 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style1.css' %}">
+{% endblock meta %}
 {% block content %}
 
+<div class="todolist">
 <h5>Username: </h5>
 <b>{{ username }}</b>
+</div>
 
-<table>
-  <tr>
-  <th>Judul Task</th>
-  <th>Deskripsi Task</th>
-  <th>Tanggal Pembuatan Task</th>
-  </tr>
   {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+  <div class = "row row-cols-auto justify-content-center">
   {% for task in list_task %}
     {% if task.user == user %}
-    <tr>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        <th>{{task.date}}</th>
+    <div class="card border-dark mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'istockphoto-1356222606-612x612.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{task.title}}</h5>
+        <p class="card-text">{{task.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{task.date}}</li>
         {% if task.is_finished %}
-          <th>Selesai</th>
+          <li class="list-group-item">Selesai</li>
         {% else %}
-          <th>Belum selesai</th>
+          <li class="list-group-item">Belum Selesai</li>
         {% endif %}
+      </ul>
+      <div class="card-body">
         <form action= "change-status/" method="POST">
           {% csrf_token %}  
-          <th><input type="submit" name="{{task.id}}" value="Change Status"></th>
+          <input type="submit" name="{{task.id}}" value="Change Status">
         </form>
         <form action= "delete-task/" method="POST" >
           {% csrf_token %}
-          <th><input type="submit" name="{{task.id}}" value="Delete Task"></th>
+          <input type="submit" name="{{task.id}}" value="Delete Task">
         </form>
-    </tr>
+      </div>
+    </div>
     {% endif %}
-{% endfor %}
-</table>
+  {% endfor %}
+  </div>
 
     
-
+<div class="todolist">
 <h5>Sesi terakhir login: {{ last_login }}</h5>
+</div>
 <button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
 <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 

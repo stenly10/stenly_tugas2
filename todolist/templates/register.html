@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block meta %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style1.css' %}">
 <title>Registrasi Akun</title>
 {% endblock meta %}
 
 {% block content %}  
 
 <div class = "login">
-    
+<div class = "text">
     <h1>Formulir Registrasi</h1>  
 
         <form method="POST" >  
@@ -29,6 +31,7 @@
         </ul>   
     {% endif %}
 
+</div>
 </div>  
 
 {% endblock content %}
