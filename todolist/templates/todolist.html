@@ -3,6 +3,47 @@
 {% block meta %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'style1.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $("#gettask").click(function(){
+      $.get("{% url 'todolist:show_json' %}", function(data, status){
+        var s = "";
+        $.each(data, function(key, value){
+            s += "<div class='card border-dark mb-3' style='width: 18rem;''>"
+              + "<img class='card-img-top' src='{% static 'istockphoto-1356222606-612x612.jpg' %}' alt='Card image cap'>"
+              + "<div class='card-body'> <h5 class='card-title'>" + data[key].fields.title + "</h5>"
+              + "<p class='card-text'>" + data[key].fields.description + "</p> </div>"
+              + "<ul class='list-group list-group-flush'> <li class='list-group-item'>" + data[key].fields.date + "</li>";
+            if(data[key].fields.is_finished == true){
+              s += "<li class='list-group-item'>Selesai</li>";
+            }else{
+              s += "<li class='list-group-item'>Belum Selesai</li>";
+            }
+            s += "</ul></div>";
+        })
+        $("#card_row").html(s);
+      })
+    })
+  })
+</script>
+
+<script>
+  $(document).ready(function(){
+    $("#make").click(function(){
+      $.post("{% url 'todolist:create_task_ajax' %}",
+      {
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+        "title": $('#task_title').val(),
+        "description": $('#task_description').val()
+      }, alert("Berhasil membuat task baru!"))
+        $('#formModal')[0].reset();
+        $('#staticBackdrop').modal('hide');
+    })
+  })
+</script>
+
 {% endblock meta %}
 {% block content %}
 
@@ -12,7 +53,7 @@
 </div>
 
   {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-  <div class = "row row-cols-auto justify-content-center">
+  <div class = "row row-cols-auto justify-content-center" id="card_row">
   {% for task in list_task %}
     {% if task.user == user %}
     <div class="card border-dark mb-3" style="width: 18rem;">
@@ -44,10 +85,38 @@
   {% endfor %}
   </div>
 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Add Task
+</button>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Task</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formModal">
+          <label for="task_title">Task title</label><br>
+          <input type="text" id="task_title" name="task_title"><br>
+          <label for="task_description">Task description</label><br>
+          <input type="text" id="task_description" name="task_description">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="make">Make</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     
 <div class="todolist">
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 </div>
+<button id="gettask">Get Task</button>
 <button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
 <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 

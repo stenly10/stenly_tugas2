@@ -11,6 +11,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.forms import FormForTask
 from todolist.models import Task
+from django.http import HttpResponse
+from django.core import serializers
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -88,6 +90,17 @@ def delete_task(request):
         if request.POST.get(str(task.id)):
             task.delete()
     return redirect('todolist:show_todolist')
-            
 
+def show_json(request):
+    list_task = Task.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize("json", list_task), content_type="application/json")
+            
+def create_task_ajax(request):
+    new_task = Task()
+    new_task.user = request.user
+    new_task.date = datetime.datetime.now()
+    new_task.title = request.POST.get("title")
+    new_task.description = request.POST.get("description")
+    new_task.save()
+    return redirect('todolist:show_todolist')
 
