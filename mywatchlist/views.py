@@ -13,6 +13,7 @@ def show_html(request):
     }
     return render(request, "mywatchlist.html", context)
 
+@csrf_exempt
 def show_json(request):
     watch_list = MyWatchList.objects.all()
     return HttpResponse(serializers.serialize("json", watch_list), content_type="application/json")
